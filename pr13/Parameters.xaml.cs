@@ -19,8 +19,7 @@ namespace pr13
     /// </summary>
     public partial class Parameters : Window
     {
-        CreateNewPassword pasWindow = new();
-        
+
         public Parameters()
         {
             InitializeComponent();
@@ -28,7 +27,23 @@ namespace pr13
 
         private void btnCreateNewPassword_Click(object sender, RoutedEventArgs e)
         {
+            CreateNewPassword pasWindow = new();
             pasWindow.Show();
+        }
+
+        private void btnSaveSize_Click(object sender, RoutedEventArgs e)
+        {
+            bool f1 = int.TryParse(tbM.Text, out int m),
+                f2 = int.TryParse(tbN.Text, out int n);
+
+            if (f1 && f2)
+            {
+                ArrayMod.SaveFile(ConfigFile.Path, $"{m}\n{n}");
+            }
+            else
+            {
+                MessageBox.Show("Размер может иметь только целочисленные значения!");
+            }
         }
     }
 }

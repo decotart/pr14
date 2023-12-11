@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media;
 
 namespace pr13
 {
@@ -105,6 +106,37 @@ namespace pr13
 
         }
 
+        public static void SaveFile(string filePath, string save)
+        {
+            StreamWriter file = new(filePath, false);
+
+            file.WriteLine(save);
+
+            file.Close();
+        }
+
+        public static int[,] OpenFile(string filePath)
+        {
+            StreamReader file = new(filePath);
+
+            int m = Convert.ToInt32(file.ReadLine()),
+                n = Convert.ToInt32(file.ReadLine());
+
+            int[,] mas = new int[m, n];
+
+            for (int i = 0; i < mas.GetLength(0); i++)
+            {
+                for (int j = 0; j < mas.GetLength(1); j++)
+                {
+                    mas[i, j] = 0;
+                }
+            }
+
+            file.Close();
+
+            return mas;
+        }
+
     }
 
     public static class VisualArray
@@ -146,5 +178,15 @@ namespace pr13
 
             return res;
         }
+    }
+
+    public static class PasswordFile
+    {
+        public static string Path = "Files/password.txt";
+    }
+
+    public static class ConfigFile
+    {
+        public static string Path = "Files/config.ini";
     }
 }

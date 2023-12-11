@@ -11,18 +11,27 @@
         <Label Content="Введите пароль"
                HorizontalAlignment="Center"/>
 
-        <Separator Height="50"/>
+        <Separator Height="30"
+                   Visibility="Hidden"/>
 
         <TextBox x:Name="tbEnteredPassword"
                  Height="50"
                  MaxLength="20"/>
 
-        <Separator Height="50"/>
+        <Separator Height="30"
+                   Visibility="Hidden"/>
 
         <Button Content="Вход"
                 Height="50"
                 Background="White"
                 Click="btnEnter_Click"/>
+
+        <Separator Height="30"
+                   Visibility="Hidden"/>
+
+        <Button Content="Выход"
+                Height="50"
+                Click="btnExit_Click"/>
 
     </StackPanel>
 </Window>

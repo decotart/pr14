@@ -4,6 +4,16 @@
              xmlns:local="clr-namespace:pr13"
              StartupUri="Window1.xaml">
     <Application.Resources>
-         
+        
+        <ResourceDictionary>
+            
+            <ResourceDictionary.MergedDictionaries>
+                
+                <ResourceDictionary Source="StyleDictionary.xaml" />
+            
+            </ResourceDictionary.MergedDictionaries>
+        
+        </ResourceDictionary>
+    
     </Application.Resources>
 </Application>

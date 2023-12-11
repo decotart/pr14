@@ -13,7 +13,9 @@
         WindowStartupLocation="CenterScreen"
         Height="450"
         Width="450" 
-        Icon="/bm2370.ico">
+        Icon="/bm2370.ico"
+        GotFocus="MainWindow_GotFocus"
+        FocusableChanged="Window_FocusableChanged">
     <Grid>
 
         <Grid.RowDefinitions>
@@ -89,6 +91,14 @@
                         Click="btnResult_Click"
                         ToolTip="Получить результат"/>
 
+                <Button Grid.Row="4"
+                        Content="Загрузить сохраненную таблицу"
+                        FontSize="20"
+                        Height="50"
+                        Background="White"
+                        Click="btnOpenSavedTable_Click"
+                        ToolTip="Получить результат"/>
+
                 <Button Grid.Row="5"
                         VerticalAlignment="Center"
                         HorizontalAlignment="Left"
@@ -118,7 +128,13 @@
                     <Button Content="Открыть"
                             ToolTip="Открыть таблицу"
                             Click="btnOpen_Click"/>
-                
+
+                    <Separator/>
+
+                    <Button Content="Параметры"
+                            ToolTip="Открыть окно параметров"
+                            Click="btnParameters_Click"/>
+
                 </ToolBar>
 
                 <Grid.ContextMenu>

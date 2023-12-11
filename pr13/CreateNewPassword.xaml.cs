@@ -31,7 +31,7 @@ namespace pr13
 
             if (result == MessageBoxResult.Yes)
             {
-                StreamWriter password = new("password.txt", false);
+                StreamWriter password = new("Files/password.txt", false);
 
                 password.WriteLine(tbPassword.Text);
 

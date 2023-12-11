@@ -33,6 +33,13 @@ namespace pr13
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                matrix = ArrayMod.OpenFile(ConfigFile.Path);
+                dataGid.ItemsSource = VisualArray.ToDataTable(matrix).DefaultView;
+            }
+            catch { }
+
             timer = new();
             timer.Tick += Timer_Tick;
             timer.Interval = new(0, 0, 0, 1, 0);
@@ -161,6 +168,19 @@ namespace pr13
         {
             Parameters pramWindow = new();
             pramWindow.Show();
+        }
+
+        private void btnOpenSavedTable_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                matrix = ArrayMod.OpenFile(ConfigFile.Path);
+                dataGid.ItemsSource = VisualArray.ToDataTable(matrix).DefaultView;
+            }
+            catch 
+            {
+                MessageBox.Show("Что-то пошло не так!");
+            }
         }
     }
 }

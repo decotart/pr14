@@ -29,22 +29,34 @@ namespace pr13
 
         private void btnEnter_Click(object sender, RoutedEventArgs e)
         {
-            StreamReader pas = new("password.txt");
+            try
+            {
+                StreamReader pas = new("Files/password.txt");
 
-            string password = pas.ReadLine(),
-                enteredPassword = tbEnteredPassword.Text;
-            
-            if (enteredPassword == password)
-            {
-                pas.Close();
-                this.Close();
-                main.Show();
+                string password = pas.ReadLine(),
+                    enteredPassword = tbEnteredPassword.Text;
+
+                if (enteredPassword == password)
+                {
+                    pas.Close();
+                    this.Close();
+                    main.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Пароль не верный");
+                    tbEnteredPassword.Clear();
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Пароль не верный");
-                tbEnteredPassword.Clear();
+                MessageBox.Show($"Что-то пошло не так! {ex.Message}");
             }
+        }
+
+        private void btnExit_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }
