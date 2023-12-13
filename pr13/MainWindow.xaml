@@ -13,9 +13,7 @@
         WindowStartupLocation="CenterScreen"
         Height="450"
         Width="450" 
-        Icon="/bm2370.ico"
-        GotFocus="MainWindow_GotFocus"
-        FocusableChanged="Window_FocusableChanged">
+        Icon="/bm2370.ico">
     <Grid>
 
         <Grid.RowDefinitions>

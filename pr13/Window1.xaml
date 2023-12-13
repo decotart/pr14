@@ -5,20 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:pr13"
         mc:Ignorable="d"
-        Title="Window1" FontSize="16" Height="300" Width="400" WindowStartupLocation="CenterOwner">
+        Title="Авторизация" FontSize="16" Height="300" Width="400" WindowStartupLocation="CenterOwner" ResizeMode="CanMinimize">
     <StackPanel>
 
         <Label Content="Введите пароль"
                HorizontalAlignment="Center"/>
 
-        <Separator Height="30"
+        <Separator Height="10"
                    Visibility="Hidden"/>
 
         <TextBox x:Name="tbEnteredPassword"
                  Height="50"
                  MaxLength="20"/>
 
-        <Separator Height="30"
+        <Separator Height="10"
                    Visibility="Hidden"/>
 
         <Button Content="Вход"
@@ -26,7 +26,7 @@
                 Background="White"
                 Click="btnEnter_Click"/>
 
-        <Separator Height="30"
+        <Separator Height="10"
                    Visibility="Hidden"/>
 
         <Button Content="Выход"

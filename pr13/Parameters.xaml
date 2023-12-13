@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:pr13"
         mc:Ignorable="d"
-        Title="Параметры" ResizeMode="CanMinimize" FontSize="16" Height="400" Width="400" WindowStartupLocation="CenterOwner" Closed="ParamWindow_Closed">
+        Title="Параметры" ResizeMode="CanMinimize" FontSize="16" Height="400" Width="400" WindowStartupLocation="CenterOwner">
     <Grid>
 
         <Grid.RowDefinitions>

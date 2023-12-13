@@ -31,14 +31,11 @@ namespace pr13
         {
             try
             {
-                StreamReader pas = new("Files/password.txt");
-
-                string password = pas.ReadLine(),
+                string password = Properties.Resources.password,
                     enteredPassword = tbEnteredPassword.Text;
 
                 if (enteredPassword == password)
                 {
-                    pas.Close();
                     this.Close();
                     main.Show();
                 }
