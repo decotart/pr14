@@ -36,6 +36,10 @@ namespace pr13
                 file.WriteLine(tbPassword.Text, true);
 
                 file.Close();
+
+                Owner.Close();
+                Owner.Owner.Hide();
+                Owner.Owner.Owner.Show();
             }
         }
     }

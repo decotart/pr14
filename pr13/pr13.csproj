@@ -9,10 +9,28 @@
 
   <ItemGroup>
     <None Remove="bm2370.ico" />
+    <None Remove="Images\exit.png" />
+    <None Remove="Images\qm.png" />
+    <None Remove="Images\r1.png" />
+    <None Remove="Images\r2.png" />
+    <None Remove="Images\r3.png" />
+    <None Remove="Images\table.png" />
+    <None Remove="Images\table2.png" />
+    <None Remove="Images\table3.png" />
+    <None Remove="Images\zamok.png" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="bm2370.ico" />
+    <Resource Include="Images\exit.png" />
+    <Resource Include="Images\qm.png" />
+    <Resource Include="Images\r1.png" />
+    <Resource Include="Images\r2.png" />
+    <Resource Include="Images\r3.png" />
+    <Resource Include="Images\table.png" />
+    <Resource Include="Images\table2.png" />
+    <Resource Include="Images\table3.png" />
+    <Resource Include="Images\zamok.png" />
   </ItemGroup>
 
   <ItemGroup>

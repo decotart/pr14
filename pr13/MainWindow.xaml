@@ -8,12 +8,12 @@
         Title="Практическая работа №14"
         MinHeight="450"
         MinWidth="800"
-        ResizeMode="CanResize"
         Loaded="Window_Loaded"
         WindowStartupLocation="CenterScreen"
         Height="450"
         Width="450" 
-        Icon="/bm2370.ico">
+        Icon="/bm2370.ico"
+        ResizeMode="CanMinimize">
     <Grid>
 
         <Grid.RowDefinitions>
@@ -30,8 +30,14 @@
             <TextBlock x:Name="tbDate" Text=""/>
         </StatusBar>
 
+        <Image Source="Images/table3.png"
+               Opacity="0.2" 
+               Grid.ColumnSpan="1"
+               Grid.RowSpan="3"
+               Margin="400,100,1,1"/>
+
         <Menu>
-            
+
             <MenuItem Header="Файл">
                 <MenuItem Header="Сохранить" Click="btnSave_Click"/>
                 <MenuItem Header="Открыть" Click="btnOpen_Click"/>
@@ -51,7 +57,7 @@
                 <Separator/>
                 <MenuItem Header="Получить результат" Click="btnResult_Click"/>
             </MenuItem>
-            
+
         </Menu>
 
         <Grid Grid.Row="1">
@@ -62,7 +68,7 @@
             </Grid.ColumnDefinitions>
 
             <Grid Grid.Column="1">
-                
+
                 <Grid.RowDefinitions>
                     <RowDefinition Height="0.6*"/>
                     <RowDefinition Height="1*"/>
@@ -72,6 +78,95 @@
                     <RowDefinition Height="1*"/>
                 </Grid.RowDefinitions>
 
+                <Image Margin="29,39,173,98" 
+                       Grid.Row="3" 
+                       Opacity="0.7"
+                       Source="/Images/r2.png" 
+                       Stretch="Fill" 
+                       Grid.RowSpan="2" 
+                       RenderTransformOrigin="0.5,0.5">
+
+                    <Image.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="25.71"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Image.RenderTransform>
+                </Image>
+
+                <Image Margin="209,126,-7,12" 
+                       Grid.Row="4" 
+                       Opacity="0.5"
+                       Source="/Images/exit.png" 
+                       Stretch="Fill" 
+                       Grid.RowSpan="2" 
+                       RenderTransformOrigin="0.5,0.5">
+
+                    <Image.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="25.71"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Image.RenderTransform>
+                </Image>
+
+                <Image Margin="-2,119,186,19" 
+                       Grid.Row="4" 
+                       Opacity="0.8"
+                       Source="/Images/qm.png" 
+                       Stretch="Fill" 
+                       Grid.RowSpan="2" 
+                       RenderTransformOrigin="0.5,0.5">
+
+                    <Image.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-36.857"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Image.RenderTransform>
+                </Image>
+
+                <Image Margin="170,1,32,30" 
+                       Opacity="0.9"
+                       Source="/Images/r3.png" 
+                       Stretch="Fill" 
+                       Grid.RowSpan="3" 
+                       RenderTransformOrigin="0.5,0.5">
+
+                    <Image.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-30.909"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Image.RenderTransform>
+                </Image>
+
+                <Image 
+                    Margin="98,78,73,11" 
+                    Grid.Row="4" 
+                    Opacity="0.6"
+                    Source="/Images/r1.png" 
+                    Stretch="Fill" 
+                    RenderTransformOrigin="0.5,0.5">
+
+                    <Image.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-18.77"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Image.RenderTransform>
+                </Image>
+
                 <Label Content="Результат:"
                        FontSize="20"
                        Grid.Row="1"/>
@@ -80,22 +175,27 @@
                          FontSize="20"
                          x:Name="tbResult"
                          VerticalAlignment="Stretch"
-                         HorizontalAlignment="Stretch"/>
+                         HorizontalAlignment="Stretch"
+                         Height="30"
+                         Width="200"/>
 
                 <Button Grid.Row="3"
                         Content="Получить результат"
                         FontSize="20"
-                        Background="White"
+                        Background="#FFEDDDFF"
                         Click="btnResult_Click"
-                        ToolTip="Получить результат"/>
+                        ToolTip="Получить результат"
+                        Height="30"
+                        Width="200"/>
 
                 <Button Grid.Row="4"
                         Content="Загрузить сохраненную таблицу"
-                        FontSize="20"
-                        Height="50"
-                        Background="White"
+                        FontSize="15"
+                        Background="#FFEDDDFF"
                         Click="btnOpenSavedTable_Click"
-                        ToolTip="Получить результат"/>
+                        ToolTip="Получить результат"
+                        Height="30"
+                        Width="250"/>
 
                 <Button Grid.Row="5"
                         VerticalAlignment="Center"
@@ -103,7 +203,7 @@
                         Content="О программе"
                         FontSize="20"
                         Click="btnInfo_Click"
-                        Background="White"
+                        Background="#FFEDDDFF"
                         ToolTip="Получить справку о программе"/>
 
                 <Button Grid.Row="5"
@@ -112,17 +212,17 @@
                         Content="Выход"
                         FontSize="20"
                         Click="btnExit_Click"
-                        Background="White"
+                        Background="#FFEDDDFF"
                         ToolTip="Выйти из программы"/>
 
                 <ToolBar >
-                    
+
                     <Button Content="Сохранить"
                             ToolTip="Сохранить таблицу"
                             Click="btnSave_Click"/>
-                    
+
                     <Separator/>
-                    
+
                     <Button Content="Открыть"
                             ToolTip="Открыть таблицу"
                             Click="btnOpen_Click"/>
@@ -155,13 +255,46 @@
 
                 <Label Content="Начальные значения:"
                        FontSize="20"/>
-                
+
                 <DataGrid Grid.Row="1"
                           x:Name="dataGid"
                           CellEditEnding="dataGrid_CellEditing"/>
 
+                <Image Grid.Row="1"
+                       Source="Images/table.png"
+                       Opacity="0.7" 
+                       Margin="0,212,394,0" 
+                       Grid.RowSpan="2" 
+                       RenderTransformOrigin="0.5,0.5">
+
+                    <Image.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-21.069"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Image.RenderTransform>
+                </Image>
+
+                <Image Grid.Row="1"
+                       Source="Images/table2.png"
+                       Opacity="0.7" 
+                       Margin="256,212,103,-1" 
+                       Grid.RowSpan="2" 
+                       RenderTransformOrigin="0.5,0.5">
+                    <Image.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="21.625"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Image.RenderTransform>
+                </Image>
+
                 <Grid Grid.Row="2">
-                    
+
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
                         <ColumnDefinition/>
@@ -192,48 +325,56 @@
                              FontSize="20"
                              VerticalAlignment="Stretch"
                              HorizontalAlignment="Stretch"
-                             x:Name="tbM"/>
+                             x:Name="tbM"
+                             Height="30"
+                             Width="150"/>
 
                     <TextBox Grid.Column="1"
                              Grid.Row="1"
                              FontSize="20"
                              VerticalAlignment="Stretch"
                              HorizontalAlignment="Stretch"
-                             x:Name="tbN"/>
+                             x:Name="tbN"
+                             Height="30"
+                             Width="150"/>
 
                     <Button Grid.Column="0"
                             Grid.Row="2"
                             Content="Создать"
                             FontSize="20"
-                            Background="White"
                             Click="btnCreate_Click"
-                            ToolTip="Создать матрицу размером M x N"/>
+                            ToolTip="Создать матрицу размером M x N"
+                            Height="30"
+                            Width="150"
+                            Background="#FFA395D6"/>
 
                     <Button Grid.Column="1"
                             Grid.Row="2"
                             Content="Заполнить"
                             FontSize="20"
-                            Background="White"
+                            Height="30"
+                            Width="150"
+                            Background="#FFA395D6"
                             Click="btnFIll_Click"
                             ToolTip="Заполнить таблицу случайными значениями"/>
 
                     <Grid.ContextMenu>
                         <ContextMenu>
-                            
+
                             <MenuItem Header="Создать таблицу" 
                                       Click="btnCreate_Click"/>
-                            
+
                             <MenuItem Header="Заполнить таблицу"
                                       Click="btnFIll_Click"/>
-            
+
                         </ContextMenu>
                     </Grid.ContextMenu>
-                    
+
                 </Grid>
-                
+
             </Grid>
 
         </Grid>
-        
+
     </Grid>
 </Window>

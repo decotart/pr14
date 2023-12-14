@@ -5,33 +5,56 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:pr13"
         mc:Ignorable="d"
-        Title="Авторизация" FontSize="16" Height="300" Width="400" WindowStartupLocation="CenterOwner" ResizeMode="CanMinimize">
-    <StackPanel>
+        Title="Авторизация" FontSize="20" Height="300" Width="400" WindowStartupLocation="CenterOwner" ResizeMode="CanMinimize">
+    <Grid>
 
-        <Label Content="Введите пароль"
-               HorizontalAlignment="Center"/>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
 
-        <Separator Height="10"
-                   Visibility="Hidden"/>
+        <Image Grid.RowSpan="4"
+               Source="Images/zamok.png" 
+               Opacity="0.3" 
+               RenderTransformOrigin="0.5,0.5" 
+               Margin="-149,-80,10,4">
+            
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-17.38"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
 
-        <TextBox x:Name="tbEnteredPassword"
+        <Label Style="{StaticResource LabelAligments}"
+               Content="Введите пароль"/>
+
+        <TextBox Grid.Row="1"
+                 Style="{DynamicResource CenteredTextBox}"
+                 Width="300"
                  Height="50"
-                 MaxLength="20"/>
+                 x:Name="tbEnteredPassword"/>
 
-        <Separator Height="10"
-                   Visibility="Hidden"/>
-
-        <Button Content="Вход"
+        <Button Grid.Row="2"
+                Style="{StaticResource WhiteCenteredButton}"
+                Width="300"
                 Height="50"
-                Background="White"
-                Click="btnEnter_Click"/>
+                Content="Войти"
+                Click="btnEnter_Click"
+                Background="#FFEDDDFF"/>
 
-        <Separator Height="10"
-                   Visibility="Hidden"/>
-
-        <Button Content="Выход"
+        <Button Grid.Row="3"
+                Style="{StaticResource WhiteCenteredButton}"
+                Width="300"
                 Height="50"
-                Click="btnExit_Click"/>
+                Content="Выход"
+                Click="btnExit_Click"
+                Background="#FFA395D6"/>
 
-    </StackPanel>
+    </Grid>
 </Window>

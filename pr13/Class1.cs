@@ -187,6 +187,6 @@ namespace pr13
 
     public static class ConfigFile
     {
-        public static string Path = "Files.config.ini";
+        public static string Path = "Files/config.ini";
     }
 }

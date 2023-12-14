@@ -9,6 +9,26 @@
                 Value="Center"/>
 
     </Style>
-    
+
+    <Style x:Key="WhiteCenteredButton" TargetType="Button">
+
+        <Setter Property="HorizontalAlignment"
+                Value="Center"/>
+        <Setter Property="VerticalAlignment"
+                Value="Center"/>
+        <Setter Property="Background"
+                Value="White"/>
+
+    </Style>
+
+    <Style x:Key="CenteredTextBox" TargetType="TextBox">
+
+        <Setter Property="HorizontalAlignment"
+                Value="Center"/>
+        <Setter Property="VerticalAlignment"
+                Value="Center"/>
+
+    </Style>
+
 </ResourceDictionary>
     

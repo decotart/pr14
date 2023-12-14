@@ -167,6 +167,7 @@ namespace pr13
         private void btnParameters_Click(object sender, RoutedEventArgs e)
         {
             Parameters pramWindow = new();
+            pramWindow.Owner = this;
             pramWindow.Show();
         }
 

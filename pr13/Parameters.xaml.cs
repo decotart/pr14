@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,21 +29,34 @@ namespace pr13
         private void btnCreateNewPassword_Click(object sender, RoutedEventArgs e)
         {
             CreateNewPassword pasWindow = new();
+            pasWindow.Owner = this;
             pasWindow.Show();
         }
 
         private void btnSaveSize_Click(object sender, RoutedEventArgs e)
         {
-            bool f1 = int.TryParse(tbM.Text, out int m),
-                f2 = int.TryParse(tbN.Text, out int n);
+            try
+            {
+                int m = Convert.ToInt32(tbM.Text),
+                    n = Convert.ToInt32(tbN.Text);
 
-            if (f1 && f2)
-            {
-                ArrayMod.SaveFile(ConfigFile.Path, $"{m}\n{n}");
+                MessageBoxResult result = MessageBox.Show("Сохранить этот размер?", "", MessageBoxButton.YesNo, MessageBoxImage.Question);
+
+                if (result == MessageBoxResult.Yes)
+                {
+                    ArrayMod.SaveFile(ConfigFile.Path, $"{m}\n{n}");
+
+                    tbN.Clear();
+                    tbM.Clear();
+                }
             }
-            else
+            catch (FormatException)
             {
-                MessageBox.Show("Размер может иметь только целочисленные значения!");
+                MessageBox.Show("Размер может быть только целочисленным!");
+            }
+            catch
+            {
+                MessageBox.Show("Что-то пошло не так!");
             }
         }
     }

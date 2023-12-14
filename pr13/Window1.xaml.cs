@@ -25,8 +25,6 @@ namespace pr13
             InitializeComponent();
         }
 
-        MainWindow main = new();
-
         private void btnEnter_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -38,8 +36,10 @@ namespace pr13
 
                 if (enteredPassword == password)
                 {
-                    this.Close();
+                    MainWindow main = new();
+                    main.Owner = this;
                     main.Show();
+                    this.Hide();
                 }
                 else
                 {
@@ -48,9 +48,9 @@ namespace pr13
                 }
                 file.Close();
             }
-            catch (Exception ex)
+            catch
             {
-                MessageBox.Show($"Что-то пошло не так! {ex.Message}");
+                MessageBox.Show($"Что-то пошло не так!");
             }
         }
 
