@@ -31,7 +31,11 @@ namespace pr13
 
             if (result == MessageBoxResult.Yes)
             {
-                
+                StreamWriter file = new(PasswordFile.Path);
+
+                file.WriteLine(tbPassword.Text, true);
+
+                file.Close();
             }
         }
     }

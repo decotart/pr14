@@ -182,11 +182,11 @@ namespace pr13
 
     public static class PasswordFile
     {
-        public static string Path = "password.txt";
+        public static string Path = "Files/password.txt";
     }
 
     public static class ConfigFile
     {
-        public static string Path = "config.ini";
+        public static string Path = "Files.config.ini";
     }
 }

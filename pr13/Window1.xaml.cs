@@ -31,7 +31,9 @@ namespace pr13
         {
             try
             {
-                string password = Properties.Resources.password,
+                StreamReader file = new(PasswordFile.Path);
+
+                string password = file.ReadLine(),
                     enteredPassword = tbEnteredPassword.Text;
 
                 if (enteredPassword == password)
@@ -44,6 +46,7 @@ namespace pr13
                     MessageBox.Show("Пароль не верный");
                     tbEnteredPassword.Clear();
                 }
+                file.Close();
             }
             catch (Exception ex)
             {
