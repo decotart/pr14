@@ -30,5 +30,35 @@
 
     </Style>
 
+    <Style x:Key="purpleMainMenuButton" TargetType="Button">
+
+        <Setter Property="VerticalAlignment"
+                Value="Center"/>
+        <Setter Property="HorizontalAlignment"
+                Value="Center"/>
+        <Setter Property="FontSize"
+                Value="20"/>
+        <Setter Property="Background"
+                Value="{x:Null}"/>
+        <Setter Property="BorderBrush"
+                Value="{x:Null}"/>
+        <Setter Property="Height"
+                Value="50"/>
+        <Setter Property="Width"
+                Value="50"/>
+
+    </Style>
+
+    <Style x:Key="labelInfoExitMainMenu" TargetType="Label">
+
+        <Setter Property="VerticalAlignment"
+                Value="Bottom"/>
+        <Setter Property="HorizontalAlignment"
+                Value="Center"/>
+        <Setter Property="Foreground"
+                Value="#FF5D3BC3"/>
+
+    </Style>
+
 </ResourceDictionary>
     

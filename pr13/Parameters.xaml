@@ -5,71 +5,127 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:pr13"
         mc:Ignorable="d"
-        Title="Параметры" ResizeMode="CanMinimize" FontSize="16" Height="400" Width="400" WindowStartupLocation="CenterOwner">
+        Title="Параметры" 
+        ResizeMode="CanMinimize" 
+        FontSize="16" 
+        Height="200" 
+        Width="400" 
+        WindowStartupLocation="CenterOwner" 
+        FontFamily="Cascadia Code"
+        Icon="Images/parameters1.png">
     <Grid>
 
-        <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
-        
-        <Label Content="Безопасность"
-               HorizontalAlignment="Center"/>
+        <TabControl>
 
-        <Button Grid.Row="1"
-                Content="Переназначить пароль"
-                Click="btnCreateNewPassword_Click"
-                Background="White"/>
+            <TabItem Header="Безопасность" Foreground="#FF5D3BC3">
 
-        <Label Content="Таблица"
-               Grid.Row="2"
-               HorizontalAlignment="Center"
-               VerticalAlignment="Center"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
 
-        <Grid Grid.Row="3"
-              Grid.RowSpan="2">
+                    <Image 
+                           Source="Images/scurity.png"
+                           Opacity="0.4"
+                           HorizontalAlignment="Left" 
+                           RenderTransformOrigin="0.5,0.5"  
+                           Width="257">
+                        <Image.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="-17.655"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Image.RenderTransform>
+                    </Image>
 
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
+                    <Label Content="Переназначить пароль"
+                           Style="{DynamicResource LabelAligments}"
+                           Foreground="#FF5D3BC3"/>
 
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
+                    <Button Grid.Column="1"
+                            Click="btnCreateNewPassword_Click"
+                            Style="{DynamicResource purpleMainMenuButton}"
+                            Height="80"
+                            Width="80">
+                        <Image Source="Images/key.png"/>
+                    </Button>
 
-            <Label Content="M:"
-                   Grid.Column="0"
-                   Style="{StaticResource LabelAligments}"/>
+                </Grid>
 
-            <Label Content="N:"
-                   Grid.Column="1"
-                   Style="{StaticResource LabelAligments}"/>
+            </TabItem>
 
-            <TextBox Grid.Row="1"
-                     Grid.Column="0"
-                     x:Name="tbM"/>
+            <TabItem Header="Таблица" Foreground="#FF5D3BC3">
 
-            <TextBox Grid.Row="1"
-                     Grid.Column="1"
-                     x:Name="tbN"/>
+                <Grid>
 
-            <Button Grid.Column="2"
-                    Grid.Row="1"
-                    Content="Сохранить размер"
-                    FontSize="14"
-                    Background="White"
-                    Click="btnSaveSize_Click"/>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition Height="2*"/>
+                        <RowDefinition Height="2*"/>
+                    </Grid.RowDefinitions>
 
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
 
-        </Grid>
+                    <Image Grid.RowSpan="2"
+                           Grid.ColumnSpan="3"
+                           Source="Images/parameters1.png"
+                           Opacity="0.4" Margin="-203,5,150,-119" Grid.Row="1"/>
 
+                    <Image Grid.RowSpan="3"
+                           Grid.ColumnSpan="2"
+                           Source="Images/table3.png"
+                           Opacity="0.4" Margin="94,-27,-130,14" Grid.Column="1"/>
+
+                    <Label Grid.ColumnSpan="3"
+                           Content="Задать размер таблице"
+                           Foreground="#FF5D3BC3"/>
+
+                    <Label Grid.Row="1"
+                           Content="M"
+                           Style="{DynamicResource LabelAligments}"
+                           Foreground="#FF5D3BC3"
+                           FontSize="20"/>
+
+                    <Label Grid.Row="2"
+                           Content="N"
+                           Style="{DynamicResource LabelAligments}"
+                           Foreground="#FF5D3BC3"
+                           FontSize="20"/>
+
+                    <TextBox Grid.Row="1"
+                             Grid.Column="1"
+                             Height="40"
+                             Width="130"
+                             x:Name="tbM"/>
+
+                    <TextBox Grid.Row="2"
+                             Grid.Column="1"
+                             Height="40"
+                             Width="130"
+                             x:Name="tbN"/>
+
+                    <Button Click="btnSaveSize_Click"
+                            Style="{DynamicResource purpleMainMenuButton}"
+                            Grid.Row="1"
+                            Grid.RowSpan="2"
+                            Grid.Column="2"
+                            Height="100"
+                            Width="100">
+                        <Image Source="Images/open.png"/>
+                    </Button>
+
+                </Grid>
+
+            </TabItem>
+
+        </TabControl>
 
     </Grid>
 </Window>

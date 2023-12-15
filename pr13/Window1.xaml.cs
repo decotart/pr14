@@ -56,7 +56,7 @@ namespace pr13
 
         private void btnExit_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            Application.Current.Shutdown();
         }
     }
 }

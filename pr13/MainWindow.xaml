@@ -12,8 +12,10 @@
         WindowStartupLocation="CenterScreen"
         Height="450"
         Width="450" 
-        Icon="/bm2370.ico"
-        ResizeMode="CanMinimize">
+        Icon="Images/fireIco.png"
+        ResizeMode="CanMinimize"
+        FontFamily="Cascadia Code"
+        Closing="Window_Closing">
     <Grid>
 
         <Grid.RowDefinitions>
@@ -21,6 +23,18 @@
             <RowDefinition Height="15*"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
+
+        <Image Source="Images/r1.png" 
+               Grid.RowSpan="2"
+               Opacity="0.2"
+               VerticalAlignment="Center"
+               HorizontalAlignment="Right"/>
+
+        <Image Source="Images/table2.png" 
+               Grid.RowSpan="2"
+               Opacity="0.2"
+               VerticalAlignment="Center"
+               HorizontalAlignment="Left"/>
 
         <StatusBar VerticalAlignment="Bottom" Grid.Row="2">
             <TextBlock x:Name="tbNumber" Text=""/>
@@ -30,32 +44,58 @@
             <TextBlock x:Name="tbDate" Text=""/>
         </StatusBar>
 
-        <Image Source="Images/table3.png"
-               Opacity="0.2" 
-               Grid.ColumnSpan="1"
-               Grid.RowSpan="3"
-               Margin="400,100,1,1"/>
-
         <Menu>
 
             <MenuItem Header="Файл">
-                <MenuItem Header="Сохранить" Click="btnSave_Click"/>
-                <MenuItem Header="Открыть" Click="btnOpen_Click"/>
+                <MenuItem Header="Сохранить" Click="btnSave_Click">
+                    <MenuItem.Icon>
+                        <Image Source="Images/save.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Открыть" Click="btnOpen_Click">
+                    <MenuItem.Icon>
+                        <Image Source="Images/open.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
                 <Separator/>
-                <MenuItem Header="Параметры" Click="btnParameters_Click"/>
+                <MenuItem Header="Параметры" Click="btnParameters_Click">
+                    <MenuItem.Icon>
+                        <Image Source="Images/parameters1.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
                 <Separator/>
-                <MenuItem Header="Выход" Click="btnExit_Click"/>
+                <MenuItem Header="Выход" Click="btnExit_Click">
+                    <MenuItem.Icon>
+                        <Image Source="Images/exit3.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
             </MenuItem>
 
             <MenuItem Header="Справка">
-                <MenuItem Header="О программе" Click="btnInfo_Click"/>
+                <MenuItem Header="О программе" Click="btnInfo_Click">
+                    <MenuItem.Icon>
+                        <Image Source="Images/qm.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
             </MenuItem>
 
             <MenuItem Header="Программа">
-                <MenuItem Header="Создать" Click="btnCreate_Click"/>
-                <MenuItem Header="Заполнить" Click="btnFIll_Click"/>
+                <MenuItem Header="Создать" Click="btnCreate_Click">
+                    <MenuItem.Icon>
+                        <Image Source="Images/create.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Заполнить" Click="btnFIll_Click">
+                    <MenuItem.Icon>
+                        <Image Source="Images/table3.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
                 <Separator/>
-                <MenuItem Header="Получить результат" Click="btnResult_Click"/>
+                <MenuItem Header="Получить результат" Click="btnResult_Click">
+                    <MenuItem.Icon>
+                        <Image Source="Images/r3.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
             </MenuItem>
 
         </Menu>
@@ -70,168 +110,105 @@
             <Grid Grid.Column="1">
 
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="0.6*"/>
-                    <RowDefinition Height="1*"/>
-                    <RowDefinition Height="1*"/>
-                    <RowDefinition Height="1*"/>
-                    <RowDefinition Height="4*"/>
-                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="27*"/>
+                    <RowDefinition Height="45*"/>
+                    <RowDefinition Height="47*"/>
+                    <RowDefinition Height="75*"/>
+                    <RowDefinition Height="80*"/>
+                    <RowDefinition Height="70*"/>
                 </Grid.RowDefinitions>
-
-                <Image Margin="29,39,173,98" 
-                       Grid.Row="3" 
-                       Opacity="0.7"
-                       Source="/Images/r2.png" 
-                       Stretch="Fill" 
-                       Grid.RowSpan="2" 
-                       RenderTransformOrigin="0.5,0.5">
-
-                    <Image.RenderTransform>
-                        <TransformGroup>
-                            <ScaleTransform/>
-                            <SkewTransform/>
-                            <RotateTransform Angle="25.71"/>
-                            <TranslateTransform/>
-                        </TransformGroup>
-                    </Image.RenderTransform>
-                </Image>
-
-                <Image Margin="209,126,-7,12" 
-                       Grid.Row="4" 
-                       Opacity="0.5"
-                       Source="/Images/exit.png" 
-                       Stretch="Fill" 
-                       Grid.RowSpan="2" 
-                       RenderTransformOrigin="0.5,0.5">
-
-                    <Image.RenderTransform>
-                        <TransformGroup>
-                            <ScaleTransform/>
-                            <SkewTransform/>
-                            <RotateTransform Angle="25.71"/>
-                            <TranslateTransform/>
-                        </TransformGroup>
-                    </Image.RenderTransform>
-                </Image>
-
-                <Image Margin="-2,119,186,19" 
-                       Grid.Row="4" 
-                       Opacity="0.8"
-                       Source="/Images/qm.png" 
-                       Stretch="Fill" 
-                       Grid.RowSpan="2" 
-                       RenderTransformOrigin="0.5,0.5">
-
-                    <Image.RenderTransform>
-                        <TransformGroup>
-                            <ScaleTransform/>
-                            <SkewTransform/>
-                            <RotateTransform Angle="-36.857"/>
-                            <TranslateTransform/>
-                        </TransformGroup>
-                    </Image.RenderTransform>
-                </Image>
-
-                <Image Margin="170,1,32,30" 
-                       Opacity="0.9"
-                       Source="/Images/r3.png" 
-                       Stretch="Fill" 
-                       Grid.RowSpan="3" 
-                       RenderTransformOrigin="0.5,0.5">
-
-                    <Image.RenderTransform>
-                        <TransformGroup>
-                            <ScaleTransform/>
-                            <SkewTransform/>
-                            <RotateTransform Angle="-30.909"/>
-                            <TranslateTransform/>
-                        </TransformGroup>
-                    </Image.RenderTransform>
-                </Image>
-
-                <Image 
-                    Margin="98,78,73,11" 
-                    Grid.Row="4" 
-                    Opacity="0.6"
-                    Source="/Images/r1.png" 
-                    Stretch="Fill" 
-                    RenderTransformOrigin="0.5,0.5">
-
-                    <Image.RenderTransform>
-                        <TransformGroup>
-                            <ScaleTransform/>
-                            <SkewTransform/>
-                            <RotateTransform Angle="-18.77"/>
-                            <TranslateTransform/>
-                        </TransformGroup>
-                    </Image.RenderTransform>
-                </Image>
 
                 <Label Content="Результат:"
                        FontSize="20"
-                       Grid.Row="1"/>
+                       Grid.Row="1" Foreground="#FF5D3BC3"/>
 
                 <TextBox Grid.Row="2"
                          FontSize="20"
                          x:Name="tbResult"
-                         VerticalAlignment="Stretch"
-                         HorizontalAlignment="Stretch"
-                         Height="30"
-                         Width="200"/>
+                         IsReadOnly="True"/>
 
                 <Button Grid.Row="3"
-                        Content="Получить результат"
-                        FontSize="20"
-                        Background="#FFEDDDFF"
                         Click="btnResult_Click"
-                        ToolTip="Получить результат"
-                        Height="30"
-                        Width="200"/>
+                        ToolTip="Получить результат" 
+                        Style="{DynamicResource purpleMainMenuButton}"
+                        HorizontalAlignment="Right"
+                        Width="150">
+                    <Image Source="Images/r3.png"/>
+                </Button>
 
                 <Button Grid.Row="4"
-                        Content="Загрузить сохраненную таблицу"
-                        FontSize="15"
-                        Background="#FFEDDDFF"
                         Click="btnOpenSavedTable_Click"
-                        ToolTip="Получить результат"
-                        Height="30"
-                        Width="250"/>
+                        ToolTip="Выгрузить сохраненную таблицу" 
+                        Style="{DynamicResource purpleMainMenuButton}"
+                        Height="50"
+                        Width="200">
+                    <Image Source="Images/upload.png"/>
+                </Button>
 
-                <Button Grid.Row="5"
-                        VerticalAlignment="Center"
-                        HorizontalAlignment="Left"
-                        Content="О программе"
-                        FontSize="20"
-                        Click="btnInfo_Click"
-                        Background="#FFEDDDFF"
-                        ToolTip="Получить справку о программе"/>
+                <Label Grid.Row="3"
+                       Style="{DynamicResource labelInfoExitMainMenu}"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Center"
+                       Content="Получить результат" Height="23" Width="137"/>
 
-                <Button Grid.Row="5"
-                        VerticalAlignment="Center"
-                        HorizontalAlignment="Right"
-                        Content="Выход"
-                        FontSize="20"
-                        Click="btnExit_Click"
-                        Background="#FFEDDDFF"
-                        ToolTip="Выйти из программы"/>
+                <Label Style="{DynamicResource labelInfoExitMainMenu}"
+                       Grid.Row="4"
+                       Content="Выгрузить сохраненную таблицу" 
+                       Height="24" 
+                       Width="214"/>
 
-                <ToolBar >
+                <Grid Grid.Row="5">
 
-                    <Button Content="Сохранить"
-                            ToolTip="Сохранить таблицу"
-                            Click="btnSave_Click"/>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <Button Grid.Column="0"                           
+                            Click="btnInfo_Click"
+                            ToolTip="Получить справку о программе"
+                            Style="{DynamicResource purpleMainMenuButton}">
+                        <Image Source="Images/qm.png"/>
+                    </Button>
+
+                    <Button Grid.Column="1"
+                            Click="btnExit_Click"
+                            ToolTip="Выйти из программы"
+                            Style="{DynamicResource purpleMainMenuButton}">
+                        <Image Source="Images/exit3.png"/>
+                    </Button>
+
+                    <Label Content="О программе"
+                           Style="{DynamicResource labelInfoExitMainMenu}"/>
+                    <Label Content="Выход"
+                           Style="{DynamicResource labelInfoExitMainMenu}"
+                           Grid.Column="1"/>
+
+                </Grid>
+
+                <ToolBar>
+
+                    <Button ToolTip="Сохранить таблицу"
+                            Click="btnSave_Click" 
+                            Foreground="#FF5D3BC3">
+                        <Image Source="Images/save.png"/>
+                    </Button>
 
                     <Separator/>
 
-                    <Button Content="Открыть"
-                            ToolTip="Открыть таблицу"
-                            Click="btnOpen_Click"/>
+                    <Button ToolTip="Открыть таблицу"
+                            Click="btnOpen_Click" 
+                            Foreground="#FF5D3BC3">
+                        <Image Source="Images/open.png"/>
+                    </Button>
 
                     <Separator/>
 
-                    <Button Content="Параметры"
-                            ToolTip="Открыть окно параметров"
-                            Click="btnParameters_Click"/>
+                    <Button ToolTip="Открыть окно параметров"
+                            Click="btnParameters_Click" 
+                            Foreground="#FF5D3BC3">
+                        <Image Source="Images/parameters1.png"/>
+                    </Button>
 
                 </ToolBar>
 
@@ -254,44 +231,11 @@
                 </Grid.RowDefinitions>
 
                 <Label Content="Начальные значения:"
-                       FontSize="20"/>
+                       FontSize="20" Foreground="#FF5D3BC3"/>
 
                 <DataGrid Grid.Row="1"
                           x:Name="dataGid"
                           CellEditEnding="dataGrid_CellEditing"/>
-
-                <Image Grid.Row="1"
-                       Source="Images/table.png"
-                       Opacity="0.7" 
-                       Margin="0,212,394,0" 
-                       Grid.RowSpan="2" 
-                       RenderTransformOrigin="0.5,0.5">
-
-                    <Image.RenderTransform>
-                        <TransformGroup>
-                            <ScaleTransform/>
-                            <SkewTransform/>
-                            <RotateTransform Angle="-21.069"/>
-                            <TranslateTransform/>
-                        </TransformGroup>
-                    </Image.RenderTransform>
-                </Image>
-
-                <Image Grid.Row="1"
-                       Source="Images/table2.png"
-                       Opacity="0.7" 
-                       Margin="256,212,103,-1" 
-                       Grid.RowSpan="2" 
-                       RenderTransformOrigin="0.5,0.5">
-                    <Image.RenderTransform>
-                        <TransformGroup>
-                            <ScaleTransform/>
-                            <SkewTransform/>
-                            <RotateTransform Angle="21.625"/>
-                            <TranslateTransform/>
-                        </TransformGroup>
-                    </Image.RenderTransform>
-                </Image>
 
                 <Grid Grid.Row="2">
 
@@ -311,14 +255,16 @@
                            Grid.Column="0"
                            FontSize="20"
                            VerticalAlignment="Center"
-                           HorizontalAlignment="Center"/>
+                           HorizontalAlignment="Center"
+                           Foreground="#FF5D3BC3"/>
 
                     <Label Content="N"
                            Grid.Row="0"
                            Grid.Column="1"
                            FontSize="20"
                            VerticalAlignment="Center"
-                           HorizontalAlignment="Center"/>
+                           HorizontalAlignment="Center"
+                           Foreground="#FF5D3BC3"/>
 
                     <TextBox Grid.Column="0"
                              Grid.Row="1"
@@ -340,23 +286,22 @@
 
                     <Button Grid.Column="0"
                             Grid.Row="2"
-                            Content="Создать"
-                            FontSize="20"
                             Click="btnCreate_Click"
                             ToolTip="Создать матрицу размером M x N"
                             Height="30"
-                            Width="150"
-                            Background="#FFA395D6"/>
+                            Width="150" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF5D3BC3">
+                        <Image Source="Images/create.png"/>
+                    </Button>
 
                     <Button Grid.Column="1"
                             Grid.Row="2"
-                            Content="Заполнить"
-                            FontSize="20"
                             Height="30"
                             Width="150"
-                            Background="#FFA395D6"
+                            Background="{x:Null}"
                             Click="btnFIll_Click"
-                            ToolTip="Заполнить таблицу случайными значениями"/>
+                            ToolTip="Заполнить таблицу случайными значениями" BorderBrush="{x:Null}" Foreground="#FF5D3BC3">
+                        <Image Source="Images/table3.png"/>
+                    </Button>
 
                     <Grid.ContextMenu>
                         <ContextMenu>
